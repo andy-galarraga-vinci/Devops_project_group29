@@ -1,0 +1,23 @@
+{
+  "name": "devops_projet",
+  "version": "1.0.0",
+  "description": "\"# Devops_project_group29\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andy-galarraga-vinci/Devops_project_group29.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andy-galarraga-vinci/Devops_project_group29/issues"
+  },
+  "homepage": "https://github.com/andy-galarraga-vinci/Devops_project_group29#readme",
+  "dependencies": {
+    "json": "^11.0.0"
+  }
+}
