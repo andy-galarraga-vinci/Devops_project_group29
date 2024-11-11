@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/andy-galarraga-vinci/Devops_project_group29#readme",
   "dependencies": {
-    "jasmine": "^5.4.0",
-    "json": "^11.0.0"
+    "devops_projet": "filr"
   }
 }
