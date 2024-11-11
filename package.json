@@ -17,7 +17,8 @@
     "url": "https://github.com/andy-galarraga-vinci/Devops_project_group29/issues"
   },
   "homepage": "https://github.com/andy-galarraga-vinci/Devops_project_group29#readme",
+  "devDependencies": {"jasmine": "5.4.0"},
   "dependencies": {
-    "devops_projet": "file:"
+    "devops_projet":"file:"
   }
 }
