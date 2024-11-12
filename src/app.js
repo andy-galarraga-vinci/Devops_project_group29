@@ -1,8 +1,8 @@
 export class Main {
-    lastRowMinute(time){
+    fifthRowMinute(time){
         if(time==="00:01:00")return "Y";
         if(time==="00:02:00")return "YY";
-        if(time==="00:03:00")return "YYY";
+        if(time==="00:03:00")return "YY";
 
         return "YYYY"
     }
