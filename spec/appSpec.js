@@ -1,10 +1,10 @@
 import { Main } from "../src/app.js";
 
-describe("turn on a yellow lamp per minute ", function(){
-    let main = new Main();
+describe("turn on a yellow light every minute ", function(){
+    const main = new Main();
 
     it("Main should return Yellow (Y) when given 1 minute", function(){
-        let result = main.fifthRowMinute("00:01:00");
+        const result = main.fifthRowMinute("00:01:00");
         
         expect(result).toBe("Y") 
     })
@@ -28,3 +28,13 @@ describe("turn on a yellow lamp per minute ", function(){
 
 
 });
+describe("turn on a yellow light per 5 minute and a red light for multiples of 15 ", function(){
+
+    const main = new Main();
+    it("Main should return Yellow (Y) when given 5 minute", function(){
+        const result = main.fourthRowMinute("00:05:00");
+        
+        expect(result).toBe("Y") 
+    })
+
+})
