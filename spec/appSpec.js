@@ -1,6 +1,12 @@
-import { Main } from "../src/app";
+import { Main } from "../src/app.js";
 
-describe("A  suite of test for the demo function of the main class", function(){
+describe("turn on a yellow lamp per minute ", function(){
 
-    it("")
+    it("Main should return Yellow (Y) when given 1 minute", function(){
+        let main = new Main();
+        
+        let result = main.lastRowMinute("00:01:00");
+        
+        expect(result).toBe("Y") 
+    })
 });
