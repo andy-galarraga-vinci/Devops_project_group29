@@ -29,12 +29,18 @@ describe("turn on a yellow light every minute ", function(){
 
 });
 describe("turn on a yellow light per 5 minute and a red light for multiples of 15 ", function(){
-
     const main = new Main();
+    
     it("Main should return Yellow (Y) when given 5 minute", function(){
         const result = main.fourthRowMinute("00:05:00");
         
         expect(result).toBe("Y") 
     })
 
-})
+    it("Main should return Yellow (Y) when given 10 minute", function(){
+        const result = main.fourthRowMinute("00:10:00");
+        
+        expect(result).toBe("YY")
+    })
+
+});

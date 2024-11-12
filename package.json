@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "# Devops_project_group29",
   "main": "index.js",
-  "type": "module", 
+  "type": "module",
   "scripts": {
     "test": "jasmine"
   },
@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/andy-galarraga-vinci/Devops_project_group29#readme",
   "devDependencies": {
-    "jasmine": "5.4.0"
+    "jasmine": "^5.4.0"
   }
 }
