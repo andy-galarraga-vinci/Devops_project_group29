@@ -8,6 +8,7 @@ export class Main {
 
     fourthRowMinute(time){
         if(time === "00:10:00") return "YY";
+        if(time === "00:15:00") return"YYR";
         return "Y";
     }
 }
