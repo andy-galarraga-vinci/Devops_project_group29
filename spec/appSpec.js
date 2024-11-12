@@ -20,5 +20,11 @@ describe("turn on a yellow lamp per minute ", function(){
         expect(result).toBe("YYY") 
     })
 
+    it("Main should return Yellow (YYYY) when given 4 minutes", function(){
+        const result = main.lastRowMinute("00:04:00");
+        
+        expect(result).toBe("YYYY")
+    })
+
 
 });
