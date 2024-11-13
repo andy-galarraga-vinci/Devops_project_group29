@@ -26,7 +26,7 @@ export class Main {
     thirdRowHour(time){
         const hours = parseInt(time.split(':')[0],10);
         const lightsOn = hours % 5;
-        const result = 'Y'.repeat(lightsOn);
+        const result = 'R'.repeat(lightsOn);
         return result.padEnd(4,'X');
     }
 }

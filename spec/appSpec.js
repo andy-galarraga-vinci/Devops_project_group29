@@ -1,9 +1,10 @@
 import { Main } from "../src/app.js";
 
-describe("turn on a yellow light every minute ", function(){
+describe("turn on a yellow light for every minute ", function(){
     const main = new Main();
 
     const fifthRowTestCases = [
+        {time: "00:00:00", expected: "XXXX"},
         {time: "00:01:00", expected: "YXXX"},
         {time: "00:02:00", expected: "YYXX"},
         {time: "00:03:00", expected: "YYYX"},
@@ -12,7 +13,9 @@ describe("turn on a yellow light every minute ", function(){
 
     fifthRowTestCases.forEach(({time, expected}) => {
         it(`Main should return '${expected}' when given '${time}'`, function(){
+            
             const result = main.fifthRowMinute(time);
+            
             expect(result).toBe(expected);
         });
     });
@@ -22,6 +25,7 @@ describe("turn on a yellow light per 5 minutes and a red light for multiples of 
     const main = new Main();
 
     const fourthRowTestCases = [
+        {time: "00:00:00", expected: "XXXXXXXXXXX"},
         {time: "00:05:00", expected: "YXXXXXXXXXX"},
         {time: "00:10:00", expected: "YYXXXXXXXXX"},
         {time: "00:15:00", expected: "YYRXXXXXXXX"},
@@ -37,10 +41,29 @@ describe("turn on a yellow light per 5 minutes and a red light for multiples of 
 
     fourthRowTestCases.forEach(({time, expected}) => {
         it(`Main should return '${expected}' when given '${time}'`, function(){
+            
             const result = main.fourthRowMinute(time);
+            
             expect(result).toBe(expected);
         });
     });
 });
+
+describe("turn on a red light for every hour", function(){
+    const main = new Main();
+
+    const thirdRowTestCases = [
+        {time: "00:00:00", expected: "XXXX"}
+    ];
+
+    thirdRowTestCases.forEach(({time, expected}) => {
+        it(`Main should return '${expected}' when given '${time}'`, function(){
+            
+            const result = main.thirdRowHour(time);
+            
+            expect(result).toBe(expected);
+        });
+    });
+})
 
 
