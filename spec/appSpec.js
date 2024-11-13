@@ -94,6 +94,13 @@ describe("turn on a red light per 5 hours", function(){
 
         expect(result).toBe("RRRX")
     })
+
+    it("Main should return Red when given 20 hours", function(){
+
+        const result = main.secondRowHour("20:00:00")
+
+        expect(result).toBe("RRRR")
+    })
     
 
 })
