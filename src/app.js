@@ -22,4 +22,11 @@ export class Main {
        return result.padEnd(11,'X');
 
     }
+
+    thirdRowHour(time){
+        const hours = parseInt(time.split(':')[0],10);
+        const lightsOn = hours % 5;
+        const result = 'Y'.repeat(lightsOn);
+        return result.padEnd(4,'X');
+    }
 }
