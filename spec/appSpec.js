@@ -73,35 +73,19 @@ describe("turn on a red light for every hour", function(){
 describe("turn on a red light per 5 hours", function(){
     const main = new Main();
     
-    it("Main shoud return Red when given 5 hours", function(){
+    const secondRowTestCases = [
+        {time: "05:00:00", expected: 'RXXX'}
+    ];
 
-        const result = main.secondRowHour("05:00:00")
-
-        expect(result).toBe("RXXX")
+    secondRowTestCases.forEach(({time, expected}) => {
+        it(`Main should return '${expected}' when given '${time}'`, function(){
+            
+            const result = main.secondRowHour(time);
+            
+            expect(result).toBe(expected);
+        });
     });
-
-    it("Main should return Red when given 10 hours", function(){
-
-        const result = main.secondRowHour("10:00:00")
-
-        expect(result).toBe("RRXX")
-
-    });
-
-    it("Main should return Red when given 15 hours", function(){
-
-        const result = main.secondRowHour("15:00:00")
-
-        expect(result).toBe("RRRX")
-    })
-
-    it("Main should return Red when given 20 hours", function(){
-
-        const result = main.secondRowHour("20:00:00")
-
-        expect(result).toBe("RRRR")
-    })
+});
     
 
-})
-
+    

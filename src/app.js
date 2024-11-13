@@ -31,9 +31,9 @@ export class Main {
     }
 
     secondRowHour(time){
-        if(time === "05:00:00") return 'RXXX';
-        if(time === "10:00:00") return 'RRXX';
-        if(time === "15:00:00") return 'RRRX';
-        if(time === "20:00:00") return 'RRRR';
+        const hours = parseInt(time.split(':')[0],10);
+        const lightsOn = hours / 5;
+        const result = 'R'.repeat(lightsOn);
+        return result.padEnd(4,'X');
     }
 }
