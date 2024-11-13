@@ -32,6 +32,7 @@ export class Main {
 
     secondRowHour(time){
         if(time === "05:00:00") return 'RXXX';
-        if(time === "10:00:00") return 'RRXX'
+        if(time === "10:00:00") return 'RRXX';
+        if(time === "15:00:00") return 'RRRX';
     }
 }
