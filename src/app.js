@@ -8,16 +8,18 @@ export class Main {
     }
 
     fourthRowMinute(time){
-        if(time === "00:10:00") return "YY";
-        if(time === "00:15:00") return"YYR";
-        if(time === "00:20:00") return "YYRY";
-        if(time === "00:25:00") return "YYRYY";
-        if(time === "00:30:00") return "YYRYYR";
-        if(time === "00:35:00") return "YYRYYRY";
-        if(time === "00:40:00") return "YYRYYRYY";
-        if(time === "00:45:00") return "YYRYYRYYR";
-        if(time === "00:50:00") return "YYRYYRYYRY";
-        if(time === "00:55:00") return "YYRYYRYYRYY";
-        return "Y";
+       const minutes = parseInt(time.split(':')[1],10);
+       const lightsOn = Math.floor(minutes / 5);
+       let result = '';
+
+       for(let i = 1; i<= lightsOn; i++){
+        if(i % 3 === 0) {
+         result += 'R';
+        } else {
+            result += 'Y';
+        }
+       }
+       return result.padEnd(11,'X');
+
     }
 }
