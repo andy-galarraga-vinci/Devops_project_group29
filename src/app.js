@@ -1,9 +1,10 @@
 export class Main {
+
     fifthRowMinute(time){
-        if(time === "00:01:00") return "Y";
-        if(time === "00:02:00") return "YY";
-        if(time === "00:03:00") return "YYY";
-        return "YYYY"
+       const minutes = parseInt(time.split(':')[1],10);
+       const lightsOn = minutes % 5;
+       const result = 'Y'.repeat(lightsOn);
+       return result.padEnd(4,'X');
     }
 
     fourthRowMinute(time){

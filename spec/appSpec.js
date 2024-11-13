@@ -3,31 +3,21 @@ import { Main } from "../src/app.js";
 describe("turn on a yellow light every minute ", function(){
     const main = new Main();
 
-    it("Main should return Yellow (Y) when given 1 minute", function(){
-        const result = main.fifthRowMinute("00:01:00");
-        
-        expect(result).toBe("Y") 
-    })
-    it("Main should return Yellow (YY) when given 2 minutes", function(){
-        const result = main.fifthRowMinute("00:02:00");
-        
-        expect(result).toBe("YY") 
-    })
+    const fifthRowTestCases = [
+        {time: "00:01:00", expected: "YXXX"},
+        {time: "00:02:00", expected: "YYXX"},
+        {time: "00:03:00", expected: "YYYX"},
+        {time: "00:04:00", expected: "YYYY"}
+    ];
 
-    it("Main should return Yellow (YYY) when given 3 minutes", function(){
-        const result = main.fifthRowMinute("00:03:00");
-        
-        expect(result).toBe("YYY") 
-    })
-
-    it("Main should return Yellow (YYYY) when given 4 minutes", function(){
-        const result = main.fifthRowMinute("00:04:00");
-        
-        expect(result).toBe("YYYY")
-    })
-
-
+    fifthRowTestCases.forEach(({time, expected}) => {
+        it(`Main should return '${expected}' when given '${time}'`, function(){
+            const result = main.fifthRowMinute(time);
+            expect(result).toBe(expected);
+        });
+    });
 });
+
 describe("turn on a yellow light per 5 minutes and a red light for multiples of 15 ", function(){
     const main = new Main();
     
