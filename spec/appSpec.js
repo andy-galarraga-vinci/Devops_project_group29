@@ -54,7 +54,8 @@ describe("turn on a red light for every hour", function(){
 
     const thirdRowTestCases = [
         {time: "00:00:00", expected: "XXXX"},
-        {time: "01:00:00", expected: "RXXX"}
+        {time: "01:00:00", expected: "RXXX"},
+        {time: "02:00:00", expected: "RRXX"}
     ];
 
     thirdRowTestCases.forEach(({time, expected}) => {
