@@ -12,6 +12,7 @@ export class Main {
         if(time === "00:20:00") return "YYRY";
         if(time === "00:25:00") return "YYRYY";
         if(time === "00:30:00") return "YYRYYR";
+        if(time === "00:35:00") return "YYRYYRY";
         return "Y";
     }
 }

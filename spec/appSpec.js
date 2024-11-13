@@ -67,4 +67,12 @@ describe("turn on a yellow light per 5 minutes and a red light for multiples of 
         expect(result).toBe("YYRYYR")
     })
 
+    it("Main should return Yellow (Y) when given 35 minutes", function(){
+        const result = main.fourthRowMinute("00:35:00");
+
+        expect(result).toBe("YYRYYRY")
+    })
+
 });
+
+    
