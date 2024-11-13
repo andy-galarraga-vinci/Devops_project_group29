@@ -56,7 +56,8 @@ describe("turn on a red light for every hour", function(){
         {time: "00:00:00", expected: "XXXX"},
         {time: "01:00:00", expected: "RXXX"},
         {time: "02:00:00", expected: "RRXX"},
-        {time: "03:00:00", expected: "RRRX"}
+        {time: "03:00:00", expected: "RRRX"},
+        {time: "04:00:00", expected: "RRRR"}
     ];
 
     thirdRowTestCases.forEach(({time, expected}) => {
@@ -67,6 +68,18 @@ describe("turn on a red light for every hour", function(){
             expect(result).toBe(expected);
         });
     });
-})
+});
 
+describe("turn on a red light per 5 hours", function(){
+    const main = new Main();
+    
+    it("Main shoud return Red when given 5 hours", function(){
+
+        const result = main.secondRowHour("05:00:00")
+
+        expect(result).toBe("RXXX")
+    })
+    
+
+})
 

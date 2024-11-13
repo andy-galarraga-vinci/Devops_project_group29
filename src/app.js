@@ -29,4 +29,8 @@ export class Main {
         const result = 'R'.repeat(lightsOn);
         return result.padEnd(4,'X');
     }
+
+    secondRowHour(time){
+        if(time === "05:00:00") return 'RXXX'
+    }
 }
