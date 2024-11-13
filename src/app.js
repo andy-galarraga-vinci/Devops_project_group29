@@ -16,6 +16,7 @@ export class Main {
         if(time === "00:40:00") return "YYRYYRYY";
         if(time === "00:45:00") return "YYRYYRYYR";
         if(time === "00:50:00") return "YYRYYRYYRY";
+        if(time === "00:55:00") return "YYRYYRYYRYY";
         return "Y";
     }
 }
