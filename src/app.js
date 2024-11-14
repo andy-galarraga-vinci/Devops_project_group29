@@ -37,7 +37,8 @@ export class Main {
         return result.padEnd(4,'X');
     }
     firstRowSeconds(time){
-        if(time === "00:00:00" || time === "00:00:02")return "Y";
+        const second = parseInt(time.split(':')[2],10);
+        if(second%2 ===0)return "Y";
         return "X";
 
     }
