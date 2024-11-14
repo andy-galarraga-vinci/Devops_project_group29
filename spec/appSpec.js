@@ -107,7 +107,7 @@ describe("turn on a yellow light when the seconds are even", function(){
         {time: "00:00:59", expected: 'X'},
     
      ];
-     
+
      firstRowTestCases.forEach(({time, expected}) => {
         it(`Main should return '${expected}' when given '${time}'`, function(){
             
@@ -118,6 +118,17 @@ describe("turn on a yellow light when the seconds are even", function(){
     });
 
 });
+describe("Group all the previous methods to give the desired time", function(){
+
+    const main = new Main();
+
+    it(" main should return (Y\nXXXX\nXXXX\nXXXXXXXXXXX\nXXXX) when given 0",function(){
+
+        const result = main.berlinClock("00:00:00");
+        
+        expect(result).toBe("Y\nXXXX\nXXXX\nXXXXXXXXXXX\nXXXX");
+    })
+})
 
     
 

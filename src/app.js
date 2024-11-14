@@ -36,11 +36,15 @@ export class Main {
         const result = 'R'.repeat(lightsOn);
         return result.padEnd(4,'X');
     };
-    
+
     firstRowSeconds(time){
         const second = parseInt(time.split(':')[2],10);
         if(second%2 ===0)return "Y";
         return "X";
 
     };
+    berlinClock(time){
+        return this.firstRowSeconds("00:00:00")+'\n'+this.secondRowHour("00:00:00")+'\n'+
+        this.thirdRowHour("00:00:00")+'\n'+this.fourthRowMinute("00:00:00")+'\n'+this.fifthRowMinute("00:00:00");
+    }
 }
