@@ -148,8 +148,20 @@ describe("Group all the previous methods to give the desired time", function(){
         const result = main.berlinClock("05:05:05");
         
         expect(result).toBe("X\nRXXX\nXXXX\nYXXXXXXXXXX\nXXXX");
-    })
+    });
+
+    it(" main should return (Y\nRRXX\nRRRX\nYYXXXXXXXXX\nYYYX) when given (06:13:06)",function(){
+
+        const result = main.berlinClock("13:13:06");
+        
+        expect(result).toBe("Y\nRRXX\nRRRX\nYYXXXXXXXXX\nYYYX");
+        console.log(result);
+
+    });
+
+    
 })
+
 
     
 
