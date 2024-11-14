@@ -158,6 +158,15 @@ describe("Group all the previous methods to give the desired time", function(){
         console.log(result);
 
     });
+    
+    it(" main should return (Y\nRRXX\nRRRX\nYYRYYRYXXXX\nYYXX) when given (13:37:00)",function(){
+
+        const result = main.berlinClock("13:37:00");
+        
+        expect(result).toBe("Y\nRRXX\nRRRX\nYYRYYRYXXXX\nYYXX");
+        console.log(result);
+
+    });
 
     
 })
