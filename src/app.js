@@ -36,4 +36,8 @@ export class Main {
         const result = 'R'.repeat(lightsOn);
         return result.padEnd(4,'X');
     }
+    firstRowSeconds(time){
+        return "Y"
+
+    }
 }

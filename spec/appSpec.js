@@ -90,6 +90,24 @@ describe("turn on a red light per 5 hours", function(){
         });
     });
 });
+describe("turn on a yellow light when the seconds are even", function(){
+
+    const main= new Main();
+
+    it("main should turn on the light when the second are 0", function(){
+        
+        const result = main.firstRowSeconds("00:00:00");
+
+        expect(result).toBe("Y")
+
+    })
+
+
+})
+
+    
+
+
     
 
     
