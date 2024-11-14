@@ -94,7 +94,7 @@ describe("turn on a yellow light when the seconds are even", function(){
 
     const main= new Main();
 
-    it("main should turn on the light when the second are 0", function(){
+    it("main should turn on the  yellow light (Y) when the second are 0", function(){
         
         const result = main.firstRowSeconds("00:00:00");
 
@@ -102,11 +102,17 @@ describe("turn on a yellow light when the seconds are even", function(){
 
     });
 
-    it("main should turn of the light when the second are 1", function(){
+    it("main should turn off the light (X) when the second are 1", function(){
 
         const result = main.firstRowSeconds("00:00:01");
 
         expect(result).toBe("X");
+    })
+    it("main should turn on the yellow light (Y) when the second are 2", function(){
+
+        const result = main.firstRowSeconds("00:00:02");
+
+        expect(result).toBe("Y");
     })
 
 
