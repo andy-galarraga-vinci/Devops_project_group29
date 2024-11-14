@@ -44,7 +44,7 @@ export class Main {
 
     };
     berlinClock(time){
-        return this.firstRowSeconds("00:00:00")+'\n'+this.secondRowHour("00:00:00")+'\n'+
-        this.thirdRowHour("00:00:00")+'\n'+this.fourthRowMinute("00:00:00")+'\n'+this.fifthRowMinute("00:00:00");
+        return this.firstRowSeconds(time)+'\n'+this.secondRowHour(time)+'\n'+
+        this.thirdRowHour(time)+'\n'+this.fourthRowMinute(time)+'\n'+this.fifthRowMinute(time);
     }
 }
