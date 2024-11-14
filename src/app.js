@@ -5,7 +5,7 @@ export class Main {
        const lightsOn = minutes % 5;
        const result = 'Y'.repeat(lightsOn);
        return result.padEnd(4,'X');
-    }
+    };
 
     fourthRowMinute(time){
        const minutes = parseInt(time.split(':')[1],10);
@@ -21,25 +21,26 @@ export class Main {
        }
        return result.padEnd(11,'X');
 
-    }
+    };
 
     thirdRowHour(time){
         const hours = parseInt(time.split(':')[0],10);
         const lightsOn = hours % 5;
         const result = 'R'.repeat(lightsOn);
         return result.padEnd(4,'X');
-    }
+    };
 
     secondRowHour(time){
         const hours = parseInt(time.split(':')[0],10);
         const lightsOn = hours / 5;
         const result = 'R'.repeat(lightsOn);
         return result.padEnd(4,'X');
-    }
+    };
+    
     firstRowSeconds(time){
         const second = parseInt(time.split(':')[2],10);
         if(second%2 ===0)return "Y";
         return "X";
 
-    }
+    };
 }
