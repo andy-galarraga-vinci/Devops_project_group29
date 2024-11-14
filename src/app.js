@@ -37,7 +37,8 @@ export class Main {
         return result.padEnd(4,'X');
     }
     firstRowSeconds(time){
-        return "Y"
+        if(time === "00:00:00")return "Y";
+        return "X";
 
     }
 }

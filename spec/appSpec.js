@@ -98,12 +98,19 @@ describe("turn on a yellow light when the seconds are even", function(){
         
         const result = main.firstRowSeconds("00:00:00");
 
-        expect(result).toBe("Y")
+        expect(result).toBe("Y");
 
+    });
+
+    it("main should turn of the light when the second are 1", function(){
+
+        const result = main.firstRowSeconds("00:00:01");
+
+        expect(result).toBe("X");
     })
 
 
-})
+});
 
     
 
