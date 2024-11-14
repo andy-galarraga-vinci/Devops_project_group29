@@ -122,50 +122,25 @@ describe("Group all the previous methods to give the desired time", function(){
 
     const main = new Main();
 
-    it(" main should return (Y\nXXXX\nXXXX\nXXXXXXXXXXX\nXXXX) when given 0",function(){
+    const berlinClockTestCases =[
+        {time: "00:00:00", expected: 'Y\nXXXX\nXXXX\nXXXXXXXXXXX\nXXXX'},
+        {time: "00:01:01", expected: 'X\nXXXX\nXXXX\nXXXXXXXXXXX\nYXXX'},
+        {time: "01:01:01", expected: 'X\nXXXX\nRXXX\nXXXXXXXXXXX\nYXXX'},
+        {time: "05:05:05", expected: 'X\nRXXX\nXXXX\nYXXXXXXXXXX\nXXXX'},
+        {time: "13:13:06", expected: 'Y\nRRXX\nRRRX\nYYXXXXXXXXX\nYYYX'},
+        {time: "13:37:00", expected: 'Y\nRRXX\nRRRX\nYYRYYRYXXXX\nYYXX'},
 
-        const result = main.berlinClock("00:00:00");
-        
-        expect(result).toBe("Y\nXXXX\nXXXX\nXXXXXXXXXXX\nXXXX");
-    });
-
-    it(" main should return (X\nXXXX\nXXXX\nXXXXXXXXXXX\nYXXX) when given (00:01:01)",function(){
-
-        const result = main.berlinClock("00:01:01");
-        
-        expect(result).toBe("X\nXXXX\nXXXX\nXXXXXXXXXXX\nYXXX");
-    });
-
-    it(" main should return (X\nXXXX\nYXXX\nXXXXXXXXXXX\nYXXX) when given (01:01:01)",function(){
-
-        const result = main.berlinClock("01:01:01");
-        
-        expect(result).toBe("X\nXXXX\nRXXX\nXXXXXXXXXXX\nYXXX");
-    });
-
-    it(" main should return (X\nXXXX\nXXXX\nXXXXXXXXXXX\nYXXX) when given (05:05:05)",function(){
-
-        const result = main.berlinClock("05:05:05");
-        
-        expect(result).toBe("X\nRXXX\nXXXX\nYXXXXXXXXXX\nXXXX");
-    });
-
-    it(" main should return (Y\nRRXX\nRRRX\nYYXXXXXXXXX\nYYYX) when given (06:13:06)",function(){
-
-        const result = main.berlinClock("13:13:06");
-        
-        expect(result).toBe("Y\nRRXX\nRRRX\nYYXXXXXXXXX\nYYYX");
-        console.log(result);
-
-    });
     
-    it(" main should return (Y\nRRXX\nRRRX\nYYRYYRYXXXX\nYYXX) when given (13:37:00)",function(){
+     ];
 
-        const result = main.berlinClock("13:37:00");
-        
-        expect(result).toBe("Y\nRRXX\nRRRX\nYYRYYRYXXXX\nYYXX");
-        console.log(result);
 
+     berlinClockTestCases.forEach(({time, expected}) => {
+        it(`Main should return '${expected}' when given '${time}'`, function(){
+            
+            const result = main.berlinClock(time);
+            
+            expect(result).toBe(expected);
+        });
     });
 
     
