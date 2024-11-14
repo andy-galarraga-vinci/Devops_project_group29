@@ -94,67 +94,27 @@ describe("turn on a yellow light when the seconds are even", function(){
 
     const main= new Main();
 
-    it("main should turn on the  yellow light (Y) when the second are 0", function(){
-        
-        const result = main.firstRowSeconds("00:00:00");
-
-        expect(result).toBe("Y");
-
-    });
-
-    it("main should turn off the light (X) when the second are 1", function(){
-
-        const result = main.firstRowSeconds("00:00:01");
-
-        expect(result).toBe("X");
-    });
-
-    it("main should turn on the yellow light (Y) when the second are 2", function(){
-
-        const result = main.firstRowSeconds("00:00:02");
-
-        expect(result).toBe("Y");
-    });
-
-    it("main should turn off the yellow light (X) when the second are 3", function(){
-
-        const result = main.firstRowSeconds("00:00:03");
-
-        expect(result).toBe("X");
-    })
-
-    it("main should turn on the yellow light (Y) when the second are 4", function(){
-
-        const result = main.firstRowSeconds("00:00:04");
-
-        expect(result).toBe("Y");
-    })
-
-    it("main should turn off the  light (X) when the second are 5", function(){
-
-        const result = main.firstRowSeconds("00:00:05");
-
-        expect(result).toBe("X");
-    })
-
-    it("main should turn on the yellow light (Y) when the second are 10", function(){
-
-        const result = main.firstRowSeconds("00:00:10");
-
-        expect(result).toBe("Y");
-    });
-
-    it("main should turn off the light (X) when the seconds are 15", function(){
-
-        const result = main.firstRowSeconds("00:00:15");
-
-        expect(result).toBe("X");
-    });
-    it("main should turn on the yellow light (Y) when the second are 50", function(){
-
-        const result = main.firstRowSeconds("00:00:50");
-
-        expect(result).toBe("Y");
+    const firstRowTestCases =[
+        {time: "00:00:00", expected: 'Y'},
+        {time: "00:00:01", expected: 'X'},
+        {time: "00:00:02", expected: 'Y'},
+        {time: "00:00:03", expected: 'X'},
+        {time: "00:00:04", expected: 'Y'},
+        {time: "00:00:05", expected: 'X'},
+        {time: "00:00:10", expected: 'Y'},
+        {time: "00:00:15", expected: 'X'},
+        {time: "00:00:50", expected: 'Y'},
+        {time: "00:00:59", expected: 'X'},
+    
+     ];
+     
+     firstRowTestCases.forEach(({time, expected}) => {
+        it(`Main should return '${expected}' when given '${time}'`, function(){
+            
+            const result = main.firstRowSeconds(time);
+            
+            expect(result).toBe(expected);
+        });
     });
 
 });
